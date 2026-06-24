@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeritaSport</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <span class="verita">Verita</span><span class="sport">Sport</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="collection.html">Collection</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Luxury Performance<br>Beyond Limits</h1>
+            <p>
+                Koleksi mobil sport premium dengan desain
+                elegan dan performa kelas dunia.
+            </p>
+            <a href="collection.html">
+                <button>Explore Collection</button>
+            </a>
+        </div>
+    </section>
+    <section class="cars">
+        <h2>Featured Collection</h2>
+        <div class="card-container">
+            <div id="paymentModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closePayment()">&times;</span>
+                    <h2>Pembelian Mobil</h2>
+                    <h3 id="carName"></h3>
+                    <p>Harga: <span id="carPrice"></span></p>
+                    <input type="text" placeholder="Nama Pembeli">
+                    <input type="text" placeholder="Nomor Telepon">
+                    <select>
+                        <option>Transfer Bank</option>
+                        <option>Kartu Kredit</option>
+                        <option>Cash</option>
+                    </select>
+                    <button onclick="finishOrder()">
+                        Konfirmasi Pembelian
+                    </button>
+                </div>
+            </div>
+            <div class="card" onclick="openPayment('Ferrari SF90','Rp 12,5 M')">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+                <h3>Ferrari SF90</h3>
+                <p>980 HP • Hybrid Supercar</p>
+                <span>Rp 12,5 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Lamborghini Revuelto','Rp 14,2 M')">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+                <h3>Lamborghini Revuelto</h3>
+                <p>V12 • AWD</p>
+                <span>Rp 14,2 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Porsche 911 Turbo S','Rp 7,8 M')">
+                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e">
+                <h3>Porsche 911 Turbo S</h3>
+                <p>640 HP • Twin Turbo</p>
+                <span>Rp 7,8 M</span>
+            </div>
+        </div>
+    </section>
+    <section class="stats">
+        <div class="box">
+            <h3>500+</h3>
+            <p>Unit Terjual</p>
+        </div>
+        <div class="box">
+            <h3>12</h3>
+            <p>Brand Premium</p>
+        </div>
+        <div class="box">
+            <h3>98%</h3>
+            <p>Customer Satisfaction</p>
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+
+        <!-- FORM INPUT -->
+        <div class="review-form">
+            <input type="text" id="name" placeholder="Nama kamu">
+            <textarea id="comment" placeholder="Tulis review kamu..."></textarea>
+            <button onclick="addReview()">Kirim Review</button>
+        </div>
+
+        <div class="carousel-wrapper">
+            <div id="reviewList" class="carousel-track"></div>
+        </div>
+    </section>
+    <footer>
+        © 2026 VeritaSport | Luxury Sports Car Dealer
+    </footer>
+    <script>
+        function openPayment(car, price) {
+            document.getElementById("carName").innerText = car;
+            document.getElementById("carPrice").innerText = price;
+            document.getElementById("paymentModal").style.display = "flex";
+        }
+        function closePayment() {
+            document.getElementById("paymentModal").style.display = "none";
+        }
+        function finishOrder() {
+            alert("Terima kasih! Pesanan Anda berhasil diproses.");
+            closePayment();
+        }
+    </script>
+    <script>
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+        function renderReviews() {
+            const list = document.getElementById("reviewList");
+            list.innerHTML = "";
+            if (reviews.length === 0) {
+                reviews = [
+                    { name: "Andi", comment: "Website ini keren banget!" },
+                    { name: "Rina", comment: "Terlihat sangat premium!" },
+                    { name: "Dimas", comment: "Smooth dan elegan." }
+                ];
+            }
+            const looped = [...reviews, ...reviews];
+            looped.forEach(r => {
+                list.innerHTML += `
+            <div class="review-card">
+                <p>"${r.comment}"</p>
+                <h4>- ${r.name}</h4>
+            </div>
+        `;
+            });
+        }
+        function addReview() {
+            const name = document.getElementById("name").value;
+            const comment = document.getElementById("comment").value;
+            if (!name || !comment) return alert("Isi dulu!");
+            reviews.push({ name, comment });
+            localStorage.setItem("reviews", JSON.stringify(reviews));
+            document.getElementById("name").value = "";
+            document.getElementById("comment").value = "";
+            renderReviews();
+        }
+        renderReviews();
+    </script>
+</body>
+
+</html>

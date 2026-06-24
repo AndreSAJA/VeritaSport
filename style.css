@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: rgb(2, 86, 86);
+    color:white;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 8%;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.verita {
+    color: white;
+}
+
+.sport {
+    color: aqua;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:aqua;
+}
+
+.hero{
+    height:90vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    background:
+    linear-gradient(rgba(0,0,0,.7),
+    rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1494905998402-395d579af36f');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-text{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:70px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color: aqua;
+    margin-bottom:30px;
+    font-size:18px;
+}
+
+button{
+    background:aqua;
+    color:black;
+    border:none;
+    padding:15px 35px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+.cars{
+    padding:80px 8%;
+}
+
+.cars h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:40px;
+}
+
+.card-container{
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:rgb(2, 60, 60);
+    width:350px;
+    overflow:hidden;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:20px 20px 10px;
+}
+
+.card p{
+    padding:0 20px;
+    color:#bdbdbd;
+}
+
+.card span{
+    display:block;
+    padding:20px;
+    color:aqua;
+    font-weight:600;
+    font-size:20px;
+}
+
+.stats{
+    padding:80px 8%;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.box{
+    width:250px;
+    text-align:center;
+    padding:40px;
+    background:rgb(2, 60, 60);
+    border-radius:15px;
+}
+
+.box h3{
+    color:aqua;
+    font-size:40px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgb(2, 60, 60);
+    color:#888;
+}
+
+.about,
+.contact{
+    padding:100px 8%;
+    max-width:900px;
+    margin:auto;
+}
+
+.about h1,
+.contact h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:aqua;
+}
+
+.about p{
+    margin-bottom:20px;
+    line-height:1.8;
+    color:#cfcfcf;
+}
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact input,
+.contact textarea{
+    background:#1a1a1a;
+    border:1px solid #333;
+    color:white;
+    padding:15px;
+    border-radius:8px;
+}
+
+.contact button{
+    width:220px;
+}
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.85);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.modal-content{
+    background:#1a1a1a;
+    padding:35px;
+    width:450px;
+    border-radius:15px;
+    border:1px solid aqua
+}
+
+.modal-content h2{
+    color:aqua;
+    margin-bottom:20px;
+}
+
+.modal-content input,
+.modal-content select{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    background:#111;
+    color:white;
+    border:1px solid #333;
+    border-radius:8px;
+}
+
+.modal-content button{
+    margin-top: 15px;
+}
+
+.close{
+    float:right;
+    font-size:30px;
+    cursor:pointer;
+    color:aqua;
+}
+
+.reviews {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.reviews h2 {
+    margin-bottom: 40px;
+    font-size: 40px;
+    color: aqua;
+}
+
+.review-form {
+    max-width: 450px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.review-form input,
+.review-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+    outline: none;
+}
+
+.review-form textarea {
+    min-height: 90px;
+    resize: none;
+}
+
+.review-form button {
+    padding: 12px;
+    border: none;
+    background: aqua;
+    color: black;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.review-form button:hover {
+    transform: translateY(-2px);
+    background: #00e6e6;
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.review-card {
+    background: rgb(2, 60, 60);
+    color: white;
+    padding: 18px;
+    width: 260px;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    border: 1px solid aqua;
+}
+
+.review-card p {
+    color: #cfcfcf;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.review-card h4 {
+    color: aqua;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollLeft 20s linear infinite;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.review-card {
+    flex: 0 0 auto;
+    width: 260px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head></head>
+<meta charset="UTF-8">
+<title>Collection - VeritaSport</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <span class="verita">Verita</span><span class="sport">Sport</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="collection.html">Collection</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="cars">
+        <h2>Our Collection</h2>
+        <div class="card-container">
+            <div id="paymentModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closePayment()">&times;</span>
+                    <h2>Pembelian Mobil</h2>
+                    <h3 id="carName"></h3>
+                    <p>Harga: <span id="carPrice"></span></p>
+                    <input type="text" placeholder="Nama Pembeli">
+                    <input type="text" placeholder="Nomor Telepon">
+                    <select>
+                        <option>Transfer Bank</option>
+                        <option>Kartu Kredit</option>
+                        <option>Cash</option>
+                    </select>
+                    <button onclick="finishOrder()">
+                        Konfirmasi Pembelian
+                    </button>
+                </div>
+            </div>
+            <div class="card" onclick="openPayment('Ferrari SF90','Rp 12,5 M')">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+                <h3>Ferrari SF90</h3>
+                <p>980 HP • Hybrid Supercar</p>
+                <span>Rp 12,5 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Lamborghini Revuelto','Rp 14,2 M')">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+                <h3>Lamborghini Revuelto</h3>
+                <p>V12 • AWD</p>
+                <span>Rp 14,2 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Porsche 911 Turbo S','Rp 7,8 M')">
+                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e">
+                <h3>Porsche 911 Turbo S</h3>
+                <p>640 HP • Twin Turbo</p>
+                <span>Rp 7,8 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Aston Martin DBS','Rp 10,8 M')">
+                <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a">
+                <h3>Aston Martin DBS</h3>
+                <p>V12 • Luxury GT</p>
+                <span>Rp 10,8 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Bugatti Chiron','Rp 45 M')">
+                <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
+                <h3>Bugatti Chiron</h3>
+                <p>1500 HP • Hypercar</p>
+                <span>Rp 45 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Ferrari 488 GTB','Rp 8,2 M')">
+                <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+                <h3>Ferrari 488 GTB</h3>
+                <p>670 HP • V8 Turbo</p>
+                <span>Rp 8,2 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Lamborghini Huracan EVO','Rp 6,5 M')">
+                <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+                <h3>Lamborghini Huracan EVO</h3>
+                <p>640 HP • AWD</p>
+                <span>Rp 6,5 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Ferrari Roma','Rp 9,8 M')">
+                <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16">
+                <h3>Ferrari Roma</h3>
+                <p>620 HP • Elegant GT</p>
+                <span>Rp 9,8 M</span>
+            </div>
+            <div class="card" onclick="openPayment('Lamborghini Aventador SVJ','Rp 13,5 M')">
+                <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023">
+                <h3>Lamborghini Aventador SVJ</h3>
+                <p>770 HP • V12 Track Beast</p>
+                <span>Rp 13,5 M</span>
+            </div>
+            <div class="card" onclick="openPayment('McLaren P1','Rp 20 M')">
+                <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+                <h3>McLaren P1</h3>
+                <p>903 HP • Hybrid Hypercar</p>
+                <span>Rp 20 M</span>
+            </div>
+        </div>
+    </section>
+    <footer>
+        © 2026 VeritaSport
+    </footer>
+    <script>
+
+        function openPayment(car, price) {
+
+            document.getElementById("carName").innerText = car;
+            document.getElementById("carPrice").innerText = price;
+
+            document.getElementById("paymentModal").style.display = "flex";
+        }
+
+        function closePayment() {
+            document.getElementById("paymentModal").style.display = "none";
+        }
+
+        function finishOrder() {
+
+            alert("Terima kasih! Pesanan Anda berhasil diproses.");
+
+            closePayment();
+        }
+
+    </script>
+</body>
+
+</html>
